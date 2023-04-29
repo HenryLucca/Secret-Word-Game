@@ -1,16 +1,13 @@
 // css
-import './App.css';
+import "../styles/globals.css"
 
 // hooks
 import {useCallback, useEffect, useState} from "react";
 
-//data
-import { wordsList } from "./data/words";
-
 // components
-import StartScreen from './components/StartScreen';
-import Game from './components/Game';
-import GameOver from './components/GameOver';
+import StartScreen from './src/components/StartScreen';
+import Game from './src/components/Game';
+import GameOver from './src/components/GameOver';
 
 const stages = [
   {id: 1, name: "start"},
@@ -18,9 +15,18 @@ const stages = [
   {id: 3, name: "end"}
 ];
 
-const guessesQty = 5;
+const wordsList = {
+  carro: ["Motor", "Porta", "Capô", "Pneu", "Antena"],
+  fruta: ["Banana", "Maçã", "Pêra", "Mamão", "Laranja"],
+  corpo: ["Braço", "Perna", "Cérebro", "Pescoço", "Olhos"],
+  computador: ["Mouse", "Teclado", "Monitor", "Gabinete"],
+  programação: ["Linguagem", "Framework", "JavaScript", "React"],
+  alimento: ["Arroz", "Feijão", "Carne", "Leite", "Ovo"],
+};
 
-function App() {
+const guessesQty = 5; 
+
+export function App() {
 
   // GameStages and WordList
   const [gameStage, setGameStage] = useState(stages[0].name);
@@ -33,7 +39,7 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [guesses, setGuesses] = useState(guessesQty);
-  const [score, setScore] = useState(50);
+  const [score, setScore] = useState(0);
 
   const pickWordAndCategory = useCallback(() => {
     // Randomize category
@@ -57,10 +63,6 @@ function App() {
     //Create an array of letters
     let wordLetters = word.split("");
     wordLetters = wordLetters.map((letter) => letter.toLowerCase());
-
-    // Spoiler
-    //console.log(word, category);
-    //console.log(wordLetters);
 
     // fill states
     setPickedWord(word);

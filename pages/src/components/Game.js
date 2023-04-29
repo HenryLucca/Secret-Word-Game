@@ -1,7 +1,5 @@
 import { useState, useRef } from "react";
-
-// styles
-import "./Game.css";
+import styles from "./Game.module.css";
 
 const Game = ({
   verifyLetter,
@@ -27,32 +25,32 @@ const Game = ({
   };
 
   return (
-    <div className="game">
-      <p className="points">
+    <div className={styles.Game}>
+      <p className={styles.points}>
         <span>Pontuação</span>: {score}
       </p>
 
       <h1>Advinhe a palavra:</h1>
 
-      <h3 className="tip">
+      <h3 className={styles.tip}>
         Dica sobre a palavra: <span>{pickedCategory}</span>
       </h3>
 
       <p>Você ainda tem {guesses} tentativa(s).</p>
 
-      <div className="wordContainer">
+      <div className={styles.wordContainer}>
         {letters.map((letter, i) =>
           guessedLetters.includes(letter) ? (
-            <span className="letter" key={i}>
+            <span className={styles.letter} key={i}>
               {letter}
             </span>
           ) : (
-            <span key={i} className="blankSquare"></span>
+            <span key={i} className={styles.blankSquare}></span>
           )
         )}
       </div>
 
-      <div className="letterContainer">
+      <div className={styles.letterContainer}>
         <p>Tente adivnhar uma letra da palavra:</p>
         <form onSubmit={handleSubmit}>
           <input
@@ -68,7 +66,7 @@ const Game = ({
         </form>
       </div>
 
-      <div className="wrongLettersContainer">
+      <div className={styles.wrongLetters}>
         <p>Letras já utilizadas:</p>
         {wrongLetters.map((letter, i) => (
           <span key={i}>{letter}, </span>
