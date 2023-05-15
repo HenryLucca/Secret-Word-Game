@@ -5,9 +5,9 @@ import "../styles/globals.css"
 import {useCallback, useEffect, useState} from "react";
 
 // components
-import StartScreen from './src/components/StartScreen';
-import Game from './src/components/Game';
-import GameOver from './src/components/GameOver';
+import StartScreen from '../components/StartScreen';
+import Game from '../components/Game';
+import GameOver from '../components/GameOver';
 
 const stages = [
   {id: 1, name: "start"},
@@ -141,6 +141,7 @@ export function App() {
   
   return (
     <div className="App">
+      <p>xxxx</p>
       {gameStage === "start" && <StartScreen startGame={startGame}/>}
       {gameStage === "game" && 
       <Game 
