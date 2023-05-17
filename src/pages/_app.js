@@ -15,22 +15,28 @@ const stages = [
   {id: 3, name: "end"}
 ];
 
-const wordsList = {
-  carro: ["Motor", "Porta", "Capô", "Pneu", "Antena"],
-  fruta: ["Banana", "Maçã", "Pêra", "Mamão", "Laranja"],
-  corpo: ["Braço", "Perna", "Cérebro", "Pescoço", "Olhos"],
-  computador: ["Mouse", "Teclado", "Monitor", "Gabinete"],
-  programação: ["Linguagem", "Framework", "JavaScript", "React"],
-  alimento: ["Arroz", "Feijão", "Carne", "Leite", "Ovo"],
+let wordsList = [];
+
+const fetchRepos = () => {
+  const url = 'http://localhost:3000' + '/api/words';
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      wordsList = data;
+    });
 };
 
 const guessesQty = 5; 
 
 export function App() {
+  
+  // fetch words
+  fetchRepos();
+  console.log(wordsList);
 
   // GameStages and WordList
   const [gameStage, setGameStage] = useState(stages[0].name);
-  const [words] = useState(wordsList);
+  // const [words] = useState(wordsList);
 
   // Game info
   const [pickedWord, setPickedWord] = useState("");
@@ -42,15 +48,17 @@ export function App() {
   const [score, setScore] = useState(0);
 
   const pickWordAndCategory = useCallback(() => {
-    // Randomize category
-    const categories = Object.keys(words);
-    const category = categories[Math.floor(Math.random() * categories.length)];
 
-    //Select random word from category
-    const word = words[category][Math.floor(Math.random() * words[category].length)];
+    // Randomize Category
+    const category = wordsList[Math.floor(Math.random() * wordsList.length)].category;
+    
+    //Randomize Word
+    const categoryWords = wordsList.filter((word) => word.category === category);
+    const word = categoryWords[0].words[Math.floor(Math.random() * categoryWords[0].words.length)];
+    word.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
 
     return{word, category};
-  },[words] );
+  },[] );
 
   // starts the Secret Word game
   const startGame = useCallback(() => {
@@ -141,7 +149,6 @@ export function App() {
   
   return (
     <div className="App">
-      <p>xxxx</p>
       {gameStage === "start" && <StartScreen startGame={startGame}/>}
       {gameStage === "game" && 
       <Game 
