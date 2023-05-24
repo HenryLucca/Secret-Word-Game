@@ -15,28 +15,14 @@ const stages = [
   {id: 3, name: "end"}
 ];
 
-let wordsList = [];
-
-const fetchRepos = () => {
-  const url = 'http://localhost:3000' + '/api/words';
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-      wordsList = data;
-    });
-};
-
 const guessesQty = 5; 
 
+const wordsList = [];
+
 export function App() {
-  
-  // fetch words
-  fetchRepos();
-  console.log(wordsList);
 
   // GameStages and WordList
   const [gameStage, setGameStage] = useState(stages[0].name);
-  // const [words] = useState(wordsList);
 
   // Game info
   const [pickedWord, setPickedWord] = useState("");
@@ -47,8 +33,14 @@ export function App() {
   const [guesses, setGuesses] = useState(guessesQty);
   const [score, setScore] = useState(0);
 
+  useEffect(() => {
+    fetch("/api/words")
+    .then((response) => response.json())
+    .then((data) => wordsList.push(...data));
+  }, []);
+  
   const pickWordAndCategory = useCallback(() => {
-
+    console.log(stages);
     // Randomize Category
     const category = wordsList[Math.floor(Math.random() * wordsList.length)].category;
     
