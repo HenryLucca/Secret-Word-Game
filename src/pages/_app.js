@@ -32,6 +32,7 @@ export function App() {
   const [wrongLetters, setWrongLetters] = useState([]);
   const [guesses, setGuesses] = useState(guessesQty);
   const [score, setScore] = useState(0);
+  const [playerName, setPlayerName] = useState("");
 
   useEffect(() => {
     fetch("/api/words")
@@ -40,7 +41,7 @@ export function App() {
   }, []);
   
   const pickWordAndCategory = useCallback(() => {
-    console.log(stages);
+
     // Randomize Category
     const category = wordsList[Math.floor(Math.random() * wordsList.length)].category;
     
@@ -138,10 +139,15 @@ export function App() {
       startGame();
     }
   }, [guessedLetters, letters, startGame]);
+
+  // handle name change
+  const handleNameChange = (event) => {
+    setPlayerName(event.target.value);
+  }
   
   return (
     <div className="App">
-      {gameStage === "start" && <StartScreen startGame={startGame}/>}
+      {gameStage === "start" && <StartScreen startGame={startGame} handleNameChange={handleNameChange}/>}
       {gameStage === "game" && 
       <Game 
       verifyLetter={verifyLetter} 
@@ -153,7 +159,7 @@ export function App() {
       guesses={guesses}
       score={score}
       />}
-      {gameStage === "end" && <GameOver retry={retry} score={score}/>}
+      {gameStage === "end" && <GameOver playerName={playerName} retry={retry} score={score}/>}
     </div>
   );
 }
