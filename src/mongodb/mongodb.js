@@ -1,5 +1,9 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
+
 const { MongoClient } = require("mongodb");
-const uri ='mongodb+srv://admin:0XWGR2Nl9xrxCq6o@secretwordgame.yopmucy.mongodb.net/?retryWrites=true&w=majority';
+console.log(process.env);
+const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 export async function connectToDatabase(){

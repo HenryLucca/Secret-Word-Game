@@ -4,7 +4,6 @@ import {useState, useEffect} from 'react'
 const GameOver = ({retry, score, playerName}) => {
 
   const [topScores, setTopScores] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     fetch("/api/highscores", {
@@ -24,7 +23,6 @@ const GameOver = ({retry, score, playerName}) => {
       <h2 className={styles.endgame}>Parabéns, {playerName}!</h2>
       <h2 className={styles.endgame}>A sua pontuação foi: <span>{score}</span> </h2>
 
-      {/* top 3 scores */}
       <h2 className={styles.endgame}>Top pontuações:</h2>
 
       {topScores.map((topScore) => (
@@ -36,4 +34,4 @@ const GameOver = ({retry, score, playerName}) => {
   )
 }
 
-export default GameOver
+export default GameOver;
