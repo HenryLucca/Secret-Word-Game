@@ -1,33 +1,68 @@
-html, body{
-    height: 100%;
-  }
-  body{
-    font-family: Helvetica;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(180deg, rgba(9, 35, 175, 1) 0%, rgba(0, 0, 0, 1) 100%);
-    color: #FFF;
-  }
-  button{
-    background: #1646a0;
-    color: #FFF;
-    padding: 0 45px;
-    border: 2px solid #FFF;
-    border-radius: 25px;
-    height: 50px;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: .4s;
-  }
-  button:hover{
-    background-color: #0923af;
-  }
+html,
+body {
+  height: 100%;
+}
 
-  .App{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+@font-face {
+  font-family: 'arcoregular';
+  src: url('arco_for_osx-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal; 
+}
+
+body {
+  font-family: 'arcoregular', sans-serif;
+  margin: 0;
+  padding: 0;
+  /* background: linear-gradient(180deg, rgba(9, 35, 175, 1) 0%, rgba(0, 0, 0, 1) 100%); */
+  background-color: #df8d15;
+  color: #FFF;
+}
+
+button {
+  background: #1646a0;
+  color: #FFF;
+  padding: 0 45px;
+  border: 2px solid #FFF;
+  border-radius: 25px;
+  height: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: .4s;
+}
+
+button:hover {
+  background-color: #0923af;
+}
+
+.App {
+  background-image: url('../../public/letters-background.jpg');
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  background-color: #df8d15;
+  margin-bottom: 3.5em;
+  padding: 1em;
+  box-shadow: #000 0.5em 0.5em, #000 -0.25em -0.25em, #000 -0.25em 0.25em,
+      #000 0.25em -0.25em;
+  border-radius: 25px;
+  display: grid;
+  justify-content: center;
+}
+
+.container h1 {
+  font-size: 3.5em;
+  text-shadow: #1a6415 0.07em 0.07em, #1a6415 -0.07em -0.07em,
+      #1a6415 -0.07em 0.07em, #1a6415 0.07em -0.07em, #000 0.14em 0.14em;
+  
+}

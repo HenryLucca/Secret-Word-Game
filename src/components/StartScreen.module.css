@@ -1,8 +1,27 @@
-.start h1{
-    font-size: 3.5em;
-}
-.start p{
+.start p {
     margin-bottom: 2em;
-    color: #ecfa00;
+    color: #fff;
 }
 
+.start input {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid white;
+    box-sizing: border-box;
+    color: white;
+    display: block;
+    font-size: 1.25em;
+    outline: none !important;
+    opacity: .75;
+    margin: 1em auto;
+    padding: 0.5em;
+    text-align: center;
+}
+.start input::placeholder {
+    color: #fff;
+    opacity: .75;
+    font-family: url('../styles/arco_for_osx-webfont.woff');
+}
+.start input:focus {
+    opacity: 1;
+}

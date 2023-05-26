@@ -25,8 +25,8 @@ const GameOver = ({retry, score, playerName}) => {
 
       <h2 className={styles.endgame}>Top pontuações:</h2>
 
-      {topScores.map((topScore) => (
-        <li key={topScore.id}>Nome: <span>{ topScore.name} </span> Pontuação: <span>{ topScore.score} </span></li>
+      {topScores.map((topScore, i) => (
+        <li key={i}>{i+1}º Nome: <span>{ topScore.name} </span> Pontuação: <span>{ topScore.score} </span></li>
       ))} 
 
       <button onClick={retry}>Resetar jogo</button>
