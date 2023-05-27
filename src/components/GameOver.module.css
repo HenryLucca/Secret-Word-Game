@@ -1,6 +1,106 @@
-.endgame span{
+.highlight {
     color: #ecfa00;
-    font-size: 1.5em;
+    font-size: 1.25em;
+    /* color: #0923af; */
 }
 
+.gameOver {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: #000 0.1em 0.1em, #000 -0.05em -0.05em, #000 -0.05em 0.1em, #000 0.1em -0.05em;
+}
 
+.gameOver ol {
+    list-style: none;
+}
+
+.gameOverContainer {
+    position: relative;
+    background-color: #df8d15;
+    box-shadow: #000 0.5em 0.5em;
+    border-radius: 25px;
+    display: grid;
+    justify-content: center;
+    margin: 0;
+    padding: 1em;
+    width: fit-content;
+    text-shadow: #000 0.1em 0.1em, #000 -0.05em -0.05em, #000 -0.05em 0.1em, #000 0.1em -0.05em;
+}
+
+.leaderboard {
+    margin: 2em 0;
+    width: 25rem;
+    height: fit-content;
+    -webkit-box-shadow: 0px 5px 15px 8px #000;
+    box-shadow: 0px 5px 15px 8px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.leaderboardHeader {
+    width: 100%;
+    background-color: #df8d15;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.gameOver table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    color: #141a39;
+    cursor: default;
+}
+
+.leaderboard tr {
+    transition: all 0.2s ease-in-out;
+    border-radius: 0.2rem;
+    padding-right: 1rem;
+}
+
+.leaderboard tr:not(:first-child):hover {
+    background-color: #0923af;
+    transform: scale(1.1);
+}
+
+.leaderboard tr:nth-child(even) {
+    background-color: #df8d15;
+}
+
+.leaderboard tr:nth-child(odd) {
+    background-color: #1646a0;
+}
+
+.leaderboard tr:nth-child(1) {
+    color: #fff;
+}
+
+.leaderboard td {
+    position: relative;
+}
+
+.position{
+    border-right: #000 solid 1px;
+    padding-left: 1rem;
+    width: 2rem;
+}
+
+.name {
+    padding-left: 1rem;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.points {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    padding-right: 1rem;
+    align-items: center;
+    flex-direction: column;
+}
