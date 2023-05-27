@@ -35,13 +35,12 @@ const GameOver = ({ retry, score, playerName }) => {
           <h2 className={styles.endgame}>Top pontuadores:</h2>
         </div>
 
-      <div className={styles.first}></div>
         <table className={styles.leaderboardTable}>
           {topScores.map((topScore, i) => (
             i === 0 ?
               <tr key={i}>
                 <td className={`${styles.highlight} ${styles.position}`}>👑  </td>
-                <td className={styles.name}><span className={styles.highlight}>{topScore.name}</span> </td>
+                <td className={styles.name}><span className={`${styles.highlight} ${styles.firstHighlight}`}>{topScore.name}</span> </td>
                 <td className={styles.points}>Pontos:  <span className={styles.highlight}>{topScore.score}</span> </td>
               </tr>
               :

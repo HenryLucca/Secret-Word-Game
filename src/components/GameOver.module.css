@@ -61,7 +61,7 @@
     padding-right: 1rem;
 }
 
-.leaderboard tr:not(:first-child):hover {
+.leaderboard tr:hover {
     background-color: #0923af;
     transform: scale(1.1);
 }
@@ -103,4 +103,8 @@
     padding-right: 1rem;
     align-items: center;
     flex-direction: column;
+}
+
+.firstHighlight {
+    color: #fff;
 }
