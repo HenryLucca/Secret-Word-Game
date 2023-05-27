@@ -1,3 +1,20 @@
+.game{
+    width: -webkit-fill-available;
+    margin: 1em;
+}
+
+.gameContainer{
+    position: relative;
+    background-color: #df8d15;
+    padding: 1em;
+    box-shadow: #000 0.5em 0.5em; 
+    border-radius: 25px;
+    display: grid;
+    justify-content: center;
+    margin: 0;
+    text-shadow: #000 0.1em 0.1em, #000 -0.05em -0.05em, #000 -0.05em 0.1em, #000 0.1em -0.05em;
+    color: #ad721a;
+}
 .game h1{
     font-size: 2.5em;
 }
@@ -6,27 +23,87 @@
     font-weight: bold;
 }
 
-.tip span{
-    color: #ecfa00;
+.upper{
+    margin: 1em 4em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+  
+.upperLeft{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 1em;
+}
+
+.pointsAndTries{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.pointsContainer{
+    width: -webkit-fill-available;
+    align-items: center;
+    margin-right: 0.75em;
+}
+
+.points{
+    font-size: large;
+}
+
+.sidePadding{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.guessTheWord{
+    font-size: 2.5em;
+}
+
+.tip{
+    font-size: 2.5em;
+}
+
+.middle{
+    margin: 1em 4em;
+    border: 0.5em solid #000;
+    border-radius: 1.5em;
+    background-color: #fff;
 }
 
 .wordContainer{
-    margin: 1.5em;
+    margin: 0.5em;
     padding: 1.5em;
-    border: 20px solid #ecfa00;
+    border-radius: 1em;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #df8d15;
 }
 
 .letter, .blankSquare{
-    font-size: 70px;
+    font-size: 4em;
     line-height: 1.5;
-    border: 3px solid #000;
-    height: 100px;
-    width: 100px;
+    border-radius: 0.25em;
+    height: 1.25em;
+    width: 2em;
+    margin: 0.05em;
     text-transform: uppercase;
     background-color: #fff;
     color: #000;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lower{
+    margin: 0 4em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 .letterContainer p{
@@ -40,10 +117,15 @@
 }
 
 .letterContainer input {
-    height: 50px;
-    width: 50px;
+    height: 1.5em;
+    width: 1.5em;
     font-size: 2em;
     text-align: center;
     margin-right: 1em;
+    border-radius: 0.25em;
   }
-  
+
+.highlight{
+    color: #ecfa00;
+    /* color: #0923af; */
+}

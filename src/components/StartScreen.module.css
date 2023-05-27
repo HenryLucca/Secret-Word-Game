@@ -1,6 +1,7 @@
 .start p {
     margin-bottom: 2em;
     color: #fff;
+    text-shadow: #000 0.1em 0.1em, #000 -0.05em -0.05em, #000 -0.05em 0.1em, #000 0.1em -0.05em;
 }
 
 .start input {
@@ -24,4 +25,10 @@
 }
 .start input:focus {
     opacity: 1;
+}
+
+.lower{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
 }
