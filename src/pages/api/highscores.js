@@ -7,6 +7,7 @@ export default async function handler(req, res) {
         const db = await connectToDatabase();
         const collection = db.collection("highscores");
         const highscores = await collection.find({}).toArray();
+        highscores.sort((a, b) => b.score - a.score);
 
         // if score is higher than the lowest score in the array, add it to the array and remove the lowest score
         if (highscores.length < 5) {
