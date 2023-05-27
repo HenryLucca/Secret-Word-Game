@@ -134,6 +134,10 @@ export function App() {
       setScore((actualScore) => (actualScore += 100));
       // add bonus guesses
       setGuesses(guesses + guessesQty);
+      // max 10 guesses
+      if (guesses > 10) {
+        setGuesses(10);
+      }
 
       // restart game with new word
       startGame();
