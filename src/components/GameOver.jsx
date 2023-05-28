@@ -1,7 +1,7 @@
 import styles from './GameOver.module.css'
 import { useState, useEffect } from 'react'
 
-const GameOver = ({ retry, score, playerName }) => {
+const GameOver = ({ retry, score, playerName, pickedWord }) => {
 
   const [topScores, setTopScores] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -27,6 +27,7 @@ const GameOver = ({ retry, score, playerName }) => {
     <div className={styles.gameOver}>
       <div className='container'>
         <h1>Fim de jogo ! </h1>
+        <p>A palavra era <span className={`${styles.highlight} ${styles.underline}`}>{pickedWord}</span></p>
       </div>
       <div className={styles.gameOverContainer}>
         <h2 className={styles.endgame}>Parabéns, <span className={styles.highlight}>{playerName}</span>!</h2>

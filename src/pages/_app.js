@@ -163,7 +163,7 @@ export function App() {
       guesses={guesses}
       score={score}
       />}
-      {gameStage === "end" && <GameOver playerName={playerName} retry={retry} score={score}/>}
+      {gameStage === "end" && <GameOver playerName={playerName} retry={retry} score={score} pickedWord={pickedWord}/>}
     </div>
   );
 }
