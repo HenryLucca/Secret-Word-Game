@@ -132,12 +132,13 @@ export function App() {
       
       // add score
       setScore((actualScore) => (actualScore += 100));
-      // add bonus guesses
-      setGuesses(guesses + guessesQty);
-      // max 10 guesses
-      if (guesses > 10) {
-        setGuesses(10);
-      }
+      // add bonus guesses, max 10
+      setGuesses((actualGuesses) => {
+        if (actualGuesses < 10 && actualGuesses+5 <= 10) {
+          return actualGuesses + 5;
+        }
+        return 10;
+      });
 
       // restart game with new word
       startGame();
