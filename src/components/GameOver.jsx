@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 const GameOver = ({ retry, score, playerName }) => {
 
   const [topScores, setTopScores] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     fetch("/api/highscores", {
@@ -14,10 +15,13 @@ const GameOver = ({ retry, score, playerName }) => {
       body: JSON.stringify({ name: playerName, score: score })
     })
       .then((response) => response.json())
-      .then((data) => setTopScores(data) && setIsLoaded(true));
+      .then((data) => {
+        setTopScores(data); 
+        setIsLoaded(true);
+        topScores.sort((a, b) => b.score - a.score);
+      });
   }, []);
 
-  topScores.sort((a, b) => b.score - a.score);
 
   return (
     <div className={styles.gameOver}>
@@ -34,6 +38,13 @@ const GameOver = ({ retry, score, playerName }) => {
         <div className={styles.leaderboardHeader}>
           <h2 className={styles.endgame}>Top pontuadores:</h2>
         </div>
+        
+        { !isLoaded &&
+          <div className={styles.loading}>
+            <h2 className={styles.endgame}>Carregando...</h2>
+            <div className={styles.loader}></div>
+          </div>
+        }
 
         <table className={styles.leaderboardTable}>
           {topScores.map((topScore, i) => (
