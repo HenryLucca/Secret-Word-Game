@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 const { MongoClient } = require("mongodb");
-console.log(process.env);
+
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
