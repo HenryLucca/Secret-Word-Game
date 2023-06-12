@@ -47,7 +47,9 @@ O Secret Word Game foi desenvolvido por Ryan Pereira e Henry Lucca, utilizando a
 
 ## Desenvolvedores
 
-Henry Lucca, Ryan Pereira. 7 Período de Ciência da Computação.
+Henry Lucca, Ryan Pereira, Thomas.
+
+7 Período em Ciência da Computação.
 
 ## Contato: 
 ryan.2020109850@unicap.br
