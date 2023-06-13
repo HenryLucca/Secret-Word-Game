@@ -52,6 +52,7 @@ Henry Lucca, Ryan Pereira, Thomas.
 7 Período em Ciência da Computação.
 
 ## Contato: 
+henry.2020109573@unicap.br
 ryan.2020109850@unicap.br
 
 ##
