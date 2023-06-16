@@ -27,6 +27,7 @@
     margin: 1em 4em;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 1em;
 }
   
@@ -128,4 +129,33 @@
 .highlight{
     color: #ecfa00;
     /* color: #0923af; */
+}
+
+@media (max-width: 1080px ){
+
+    .game{
+        font-size: 0.75em;
+    }
+    .letterContainer{
+        font-size: 1.25em;
+    }
+    .upper{
+        gap: 0.75em;
+    }
+}
+
+@media (max-width: 768px ){
+
+    .game{
+        font-size: 0.5em;
+    }
+    .upper{
+        gap: 0.75em;
+    }
+}
+
+@media(max-height:500px){
+    .gameContainer{
+        font-size: 0.75em;
+    }
 }

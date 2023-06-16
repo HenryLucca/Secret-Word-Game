@@ -138,3 +138,52 @@
 .firstHighlight {
     color: #fff;
 }
+
+@media screen and (max-width: 600px) {
+    .leaderboard {
+        width: 80%;
+        overflow-x: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .leaderboard {
+        width: 100%;
+        overflow-x: auto;
+    }
+    .leaderboard tr {
+        font-size: 0.8rem;
+    }
+    .leaderboard td{
+        padding: 0.5rem 0.25rem;
+    }
+    .name {
+        font-size: 1rem;
+    }
+    .points {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-height: 768px){
+    .gameOver{
+        font-size: 0.8em;
+    }
+    .leaderboard tr {
+        font-size: 0.8rem;
+    }
+    .leaderboard td{
+        padding: 0.5rem 0.25rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .gameOver {
+        font-size: 0.5em;
+    }
+    .gameOver button{
+        font-size: 1.5em;
+    }
+    
+}

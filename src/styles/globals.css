@@ -62,8 +62,38 @@ button:hover {
 }
 
 .container h1 {
-  font-size: 3.5em;
+  font-size: 3em;
   text-shadow: #1a6415 0.07em 0.07em, #1a6415 -0.07em -0.07em,
       #1a6415 -0.07em 0.07em, #1a6415 0.07em -0.07em, #000 0.14em 0.14em;
-  
+}
+
+@media (max-width: 768px) {
+  .App {
+      width: 90%;
+    }
+
+  button{
+    padding: 0 30px;
+  }
+
+  .container {
+      width: 80%;
+      border-radius: 25px;
+  }
+}
+
+@media (max-height: 860px) {
+  .App {
+      height: 100vh;
+      font-size: 0.75em;
+  }
+
+  .container{
+    margin-bottom: 1.5em;
+    padding: 0.5em;
+  }
+ 
+  .container h1 {
+    font-size: 2.5em;
+  }
 }

@@ -32,3 +32,21 @@
     justify-content: space-around;
     margin-top: 1em;
 }
+
+
+@media (max-width:768px) {
+
+    .start {
+        width: 80%;
+    }
+
+    .start input {
+        width: 100%;
+    }
+
+    .lower {
+        flex-direction: column;
+    }
+    
+}
+
